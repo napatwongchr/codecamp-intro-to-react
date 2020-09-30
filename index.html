@@ -9,18 +9,22 @@
   <div id="root"></div>
   <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
-  <script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
     const rootElement = document.getElementById("root")
-    const headingElement = React.createElement(
-      "h1",
-      {
-        className: "hello-react-text"
-      },
-      "Hello, React !"
-    )
+
+    function GreetingMessage(props) {
+      return <h1>Welcome {props.name} !</h1>
+    }
+
+    const element = <div className="container">
+      <GreetingMessage name="React" />
+      <GreetingMessage name="Judie" />
+      <GreetingMessage name="World" />
+    </div>
 
     ReactDOM.render(
-      headingElement,
+      element,
       rootElement
     )
   </script>
