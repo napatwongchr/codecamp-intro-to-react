@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
-import Counter from './Counter'
+import React from 'react';
+import Clock from "./Clock"
 import './App.css';
 
 function App() {
-  const [show, setShow] = useState(true)
-
-  const showToggle = () => {
-    setShow(!show)
-  }
-
   return (
     <div className="App">
-      { show && <Counter />}
-      <button onClick={showToggle}>Toggle</button>
+      <Clock />
     </div>
   );
 }
